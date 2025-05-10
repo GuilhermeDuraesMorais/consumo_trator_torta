@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Abastecimento - Trator</title> <!-- Título atualizado -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' stroke='%236A737D' stroke-width='1.5' fill='none'/><text x='5' y='18.5' font-size='5' fill='%236A737D'>T</text><text x='15' y='18.5' font-size='5' fill='%236A737D'>H</text><line x1='12' y1='12' x2='7' y2='9' stroke='%230D6EFD' stroke-width='1.8' stroke-linecap='round'/><circle cx='12' cy='12' r='1.5' fill='%230D6EFD'/></svg>"> <!-- Favicon opcionalmente atualizado -->
+    <title>Controle de Abastecimento - Trator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' stroke='%236A737D' stroke-width='1.5' fill='none'/><text x='5' y='18.5' font-size='5' fill='%236A737D'>T</text><text x='15' y='18.5' font-size='5' fill='%236A737D'>I</text><line x1='12' y1='12' x2='7' y2='9' stroke='%230D6EFD' stroke-width='1.8' stroke-linecap='round'/><circle cx='12' cy='12' r='1.5' fill='%230D6EFD'/></svg>">
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="./manifest.json">
@@ -14,8 +14,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Abastecimento">
-    <!-- Add your apple-touch-icon links here if you create them -->
-    <!-- e.g., <link rel="apple-touch-icon" href="./icon-192x192.png"> -->
+    <!-- 
+      Para ícones da Apple, você precisaria criar imagens nos tamanhos apropriados
+      e referenciá-las aqui. Exemplo:
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> (ou ./apple-touch-icon.png se na raiz)
+      Geralmente, os navegadores iOS modernos também usam os ícones do manifest.json.
+    -->
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +29,11 @@
 <body>
     <!-- Main container (content loaded dynamically except for initial structure) -->
     <div id="app-container">
-        <!-- Content will be injected here by script.js -->
+        <!-- Conteúdo será injetado aqui pelo script.js -->
+        <!-- Exemplo de estado inicial enquanto o JS carrega (opcional) -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #666;">
+            Carregando aplicativo...
+        </div>
     </div>
 
     <!-- Libraries -->
@@ -43,7 +51,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
+                navigator.serviceWorker.register('./sw.js') // Certifique-se que o caminho está correto
                     .then(registration => {
                         console.log('[App] ServiceWorker registration successful with scope: ', registration.scope);
                     })
